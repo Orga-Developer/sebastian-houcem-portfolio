@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#FAF9F6" />
+    <meta name="description" content="Sebastian Houcem is an independent digital creator focused on design, creative technology, and quality." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Sebastian Houcem" />
+    <meta property="og:title" content="Sebastian Houcem | Independent Digital Creator &amp; Digital Products Seller" />
+    <meta property="og:description" content="An independent digital creator focused on design, creative technology, and quality." />
+    <meta property="og:locale" content="en" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sebastian Houcem | Independent Digital Creator" />
+    <meta name="twitter:description" content="An independent digital creator focused on design, creative technology, and quality." />
+    <meta name="robots" content="index,follow" />
+    <link rel="icon" type="image/svg+xml" href="%BASE_URL%brand-mark.svg" />
+    <title>Sebastian Houcem | Independent Digital Creator &amp; Digital Products Seller</title>
+    <script>
+      (() => {
+        try {
+          const base = "%BASE_URL%";
+          const path = window.location.pathname;
+          if (path === base || path === `${base}index.html`) {
+            const allowed = ["en", "ar", "de", "ru", "hi"];
+            const saved = window.localStorage.getItem("sebastian-locale");
+            const locale = allowed.includes(saved || "") ? saved : "en";
+            window.location.replace(`${base}${locale}/`);
+          }
+          const theme = window.localStorage.getItem("sebastian-theme");
+          if (theme === "dark" || theme === "light") {
+            document.documentElement.dataset.theme = theme;
+          }
+        } catch {
+          // Keep the default language and light theme when storage is unavailable.
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
